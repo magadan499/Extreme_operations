@@ -19,3 +19,9 @@ def successful_operations(files):
         elif file['state'] == "EXECUTED":
             success_operation.append(file)
     return success_operation
+
+
+def get_last_five_operations(operations):
+    """Вывод пяти крайних операций"""
+    sort_operations = sorted(operations, key=lambda x: datetime.strptime(x['date'], '%Y-%m-%dT%H:%M:%S.%f'), reverse= True)
+    return sort_operations[:5]
