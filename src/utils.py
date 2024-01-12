@@ -25,3 +25,13 @@ def get_last_five_operations(operations):
     """Вывод пяти крайних операций"""
     sort_operations = sorted(operations, key=lambda x: datetime.strptime(x['date'], '%Y-%m-%dT%H:%M:%S.%f'), reverse= True)
     return sort_operations[:5]
+
+
+def formatting_date(data):
+    """Форматирование даты"""
+    format_operations = []
+    for file in data:
+        sort_operations = datetime.strptime(file['date'], '%Y-%m-%dT%H:%M:%S.%f')
+        format_data = f'{sort_operations:%d.%m.%Y}'
+        format_operations.append(format_data)
+    return format_operations
