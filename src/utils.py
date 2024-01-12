@@ -35,3 +35,9 @@ def formatting_date(data):
         format_data = f'{sort_operations:%d.%m.%Y}'
         format_operations.append(format_data)
     return format_operations
+
+
+def masks_card_number(card_number):
+    """Маскирует номер карты"""
+    mask_number = '{} {}** **** {}'.format(card_number[: -12], card_number[-10:-8], card_number[-4:])
+    return mask_number
