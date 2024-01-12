@@ -41,3 +41,9 @@ def masks_card_number(card_number):
     """Маскирует номер карты"""
     mask_number = '{} {}** **** {}'.format(card_number[: -12], card_number[-10:-8], card_number[-4:])
     return mask_number
+
+
+def masks_account_number(account_number):
+    """Маскирует номер счета"""
+    mask_account = 'Счет **{}'.format(account_number[-4:])
+    return mask_account
