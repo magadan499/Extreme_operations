@@ -26,3 +26,7 @@ def test_get_last_five_operations():
 def test_formatting_date():
     """Проверка форматирования даты"""
     assert formatting_date([{"date": "2024-01-12T10:50:58.294041"}]) == ["12.01.2024"]
+
+
+def test_masks_card_number():
+    assert masks_card_number('4598300720424501') == '4598 07** **** 4501'
