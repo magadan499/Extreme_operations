@@ -30,3 +30,7 @@ def test_formatting_date():
 
 def test_masks_card_number():
     assert masks_card_number('4598300720424501') == '4598 07** **** 4501'
+
+
+def test_masks_account_number():
+    assert masks_account_number('Счет 43597928997568165086') == 'Счет **5086'
