@@ -27,14 +27,10 @@ def get_last_five_operations(operations):
     return sort_operations[:5]
 
 
-def formatting_date(data):
-    """Форматирование даты"""
-    format_operations = []
-    for file in data:
-        sort_operations = datetime.strptime(file['date'], '%Y-%m-%dT%H:%M:%S.%f')
-        format_data = f'{sort_operations:%d.%m.%Y}'
-        format_operations.append(format_data)
-    return format_operations
+def format_date(value):
+    """Переводим дату в необходимый формат"""
+    new_data = datetime.strptime(value, "%Y-%m-%dT%H:%M:%S.%f").strftime("%d.%m.%Y")
+    return new_data
 
 
 def masks_card_number(card_number):
@@ -47,3 +43,5 @@ def masks_account_number(account_number):
     """Маскирует номер счета"""
     mask_account = 'Счет **{}'.format(account_number[-4:])
     return mask_account
+
+# print(formatting_date(get_last_five_operations(successful_operations(get_user_operations()))))
