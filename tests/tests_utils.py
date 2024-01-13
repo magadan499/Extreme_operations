@@ -22,9 +22,9 @@ def test_get_last_five_operations():
                                                                                   {'date': '2018-06-30T02:08:58.425572'}]
 
 
-def test_formatting_date():
+def test_format_date():
     """Проверка форматирования даты"""
-    assert formatting_date([{"date": "2024-01-12T10:50:58.294041"}]) == ["12.01.2024"]
+    assert format_date("2024-01-12T10:50:58.294041") == "12.01.2024"
 
 
 def test_masks_card_number():
